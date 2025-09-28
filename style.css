@@ -77,6 +77,6 @@ body{
 h2{
     text-align: center;
 }
-#task-head{
+.task-head{
     display: none;
 }

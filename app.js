@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let delBtn = document.querySelector(".task button");
     let addTo = document.querySelector(".task-list");
     let TaskArray = JSON.parse(localStorage.getItem("tasks")) || [];
-
     TaskArray.forEach(task => {
         renderFromLocalSTorage(task);
     });
@@ -30,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     function renderFromLocalSTorage(task) {
+        document.querySelector("h3").style.display = "block"; // task heading
         const li = document.createElement("li");
         li.setAttribute('data-id',task.id);
         li.innerHTML = `<p>${task.text}</p>
@@ -37,6 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
         li.classList.add("task");
         addTo.append(li);
 
+        if(task.isCompleted === true){
+            li.classList.add("completed");
+        }
 
         li.addEventListener("click",(e)=>{
             if(e.target.tagName === "BUTTON") 
@@ -48,9 +51,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         li.querySelector("button").addEventListener("click",(e)=>{
             e.stopPropagation;
-            TaskArray = TaskArray.filter(task => e.target.id == TaskArray.id);
+            TaskArray = TaskArray.filter(t => t.id !== task.id);
             li.remove();
             saveToLocalStorage();
+            if(TaskArray.length == 0)
+                document.querySelector("h3").style.display = "none";
         })
     }
 })
