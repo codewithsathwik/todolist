@@ -1,0 +1,78 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(197, 192, 192);
+    font-family: "poppins",sans-serif;
+}
+.container{
+    max-width: fit-content;
+    height: fit-content;
+    background-color: rgb(76, 81, 81);
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.task{
+    display: flex;
+    height: auto;
+    /* background-color: azure; */
+    justify-content: space-between;
+    gap: 5px
+    ;
+}
+.task p{
+    width: 80%;
+    height: auto;
+    background-color: rgb(159, 159, 163);
+    border-radius: 3px;
+    padding: 5px;
+    color: rgb(10, 6, 6);
+}
+.btn{
+    padding: 5px;
+    font-size: 17px;
+    border-radius: 5px;
+    background-color: rgb(22, 205, 22);
+    color: white;
+    cursor: pointer;
+}
+.add-task{
+    display: flex;
+    gap: 5px;
+}
+.add-task input{
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.btn-del{
+    background-color: red;
+}
+.task-list{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.toggle-strike{
+    text-decoration: line-through;
+    text-decoration-color: black;
+}
+h2{
+    text-align: center;
+}
