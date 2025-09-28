@@ -36,5 +36,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 <button class="btn btn-del">Delete</button>`;
         li.classList.add("task");
         addTo.append(li);
+
+
+        li.addEventListener("click",(e)=>{
+            if(e.target.tagName === "BUTTON") 
+                return;
+            li.classList.toggle("completed");
+            task.isCompleted = !task.isCompleted;
+            saveToLocalStorage();
+        })
+
+        li.querySelector("button").addEventListener("click",(e)=>{
+            e.stopPropagation;
+            TaskArray = TaskArray.filter(task => e.target.id == TaskArray.id);
+            li.remove();
+            saveToLocalStorage();
+        })
     }
 })
