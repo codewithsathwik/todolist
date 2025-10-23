@@ -21,12 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
         renderFromLocalSTorage(taskObj);
         document.querySelector(".add-task input").value = "";
     })
-
-
-
-
-
-
 })
 
 
